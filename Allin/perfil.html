@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Perfil - App de Serviços</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body>
+    <div class="phone-container">
+        <div class="perfil-header">
+            <a href="index.html" class="back-btn" style="text-decoration: none;">←</a>
+            <h2>Editar Perfil</h2>
+            <div class="spacer"></div>
+        </div>
+
+        <div class="perfil-content">
+            <div class="avatar-container">
+                <div class="profile-avatar">👤</div>
+                <span class="change-avatar-txt">Alterar foto</span>
+            </div>
+
+            <form id="perfil-form" onsubmit="salvarPerfil(event)">
+                <div class="input-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" value="João">
+                </div>
+
+                <div class="input-group">
+                    <label for="sobrenome">Sobrenome</label>
+                    <input type="text" id="sobrenome" value="Silva">
+                </div>
+
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" value="joao.silva@email.com">
+                </div>
+
+                <div class="input-group">
+                    <label for="senha">Senha</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="senha" value="12345678">
+                        <button type="button" class="toggle-password" onclick="toggleSenha()">👁️</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="telefone">Número de Telefone</label>
+                    <input type="tel" id="telefone" value="(11) 99999-9999">
+                </div>
+
+                <div class="input-group">
+                    <label for="bio">Biografia</label>
+                    <textarea id="bio" rows="3">Usuário do app em busca dos melhores profissionais de São Paulo.</textarea>
+                </div>
+
+                <button type="submit" class="save-btn">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Função para mostrar/esconder a senha
+        function toggleSenha() {
+            const senhaInput = document.getElementById('senha');
+            if (senhaInput.type === 'password') {
+                senhaInput.type = 'text';
+            } else {
+                senhaInput.type = 'password';
+            }
+        }
+
+        // Função simulada para salvar os dados
+        function salvarPerfil(event) {
+            event.preventDefault();
+            alert('Perfil atualizado com sucesso!');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+.yellow-bg {
+    background-color: var(--primary-yellow);
+}
+
+.loading-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    width: 80px;
+    height: 80px;
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-nav {
+    background-color: var(--primary-yellow);
+    border-top: none;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.bg-white {
+    background-color: #fff !important;
+}
+
+.active-nav .nav-icon {
+    box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--primary-yellow);
+}
