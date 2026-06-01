@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - App</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
+    <style>
+        .home-header {
+            background-color: var(--primary-yellow);
+            height: 220px;
+            border-bottom-left-radius: 50% 20%;
+            border-bottom-right-radius: 50% 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            padding-top: 15px;
+        }
+        .header-top-row {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 0 25px;
+            margin-bottom: 15px;
+        }
+        .brand-logo {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-container">
+        
+        <div class="home-header">
+            <div class="header-top-row">
+                <img src="./img/1000067940-removebg-preview.png" class="brand-logo" alt="Logo">
+            </div>
+
+            <div class="search-container">
+                <input type="text" placeholder="Diga a nós qual o problema">
+                <button class="search-btn">🔍</button>
+            </div>
+        </div>
+
+        <div style="flex: 1;"></div>
+
+        <nav class="nav-bar">
+            <a href="perfil.html" class="nav-item"><div class="nav-icon">👤</div>Perfil</a>
+            <a href="chat.html" class="nav-item"><div class="nav-icon">💬</div>Mensagens</a>
+            <a href="pagamento.html" class="nav-item"><div class="nav-icon">R$</div>Pagamento</a>
+            <a href="#" class="nav-item"><div class="nav-icon">•••</div>Configurações</a>
+        </nav>
+    </div>
+</body>
+</html>

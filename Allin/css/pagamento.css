@@ -1,0 +1,227 @@
+/* css/pagamento.css */
+
+.pagamento-header {
+    background-color: var(--primary-yellow);
+    padding: 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-top h2 {
+    font-size: 18px;
+    color: var(--text-dark);
+}
+
+.brand-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.balance-card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.balance-card span {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.balance-card h1 {
+    font-size: 24px;
+    color: var(--text-dark);
+    margin-top: 5px;
+}
+
+.pagamento-scroll-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    padding-bottom: 100px;
+    background-color: #F8F9FA;
+}
+
+.section-label {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #95A5A6;
+    margin: 20px 0 10px;
+    letter-spacing: 1px;
+}
+
+.eximus-label {
+    color: #8E44AD; /* Cor roxa para destacar o plano Eximus */
+}
+
+.manage-card {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #EAECEE;
+}
+
+.eximus-card {
+    border-left: 5px solid #8E44AD;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.card-title h3 {
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.manage-card p {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.action-row {
+    display: flex;
+    gap: 8px;
+}
+
+.action-row input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.btn-small {
+    background: var(--text-dark);
+    color: white;
+    border: none;
+    padding: 0 15px;
+    border-radius: 8px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.employee-list {
+    margin-bottom: 12px;
+}
+
+.employee-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.employee-item span {
+    font-size: 13px;
+    color: var(--text-dark);
+}
+
+.employee-item input {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: right;
+}
+
+.btn-main {
+    width: 100%;
+    background: var(--primary-yellow);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-outline {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* Switch (Botão liga/desliga) */
+.toggle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px; width: 16px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider { background-color: #8E44AD; }
+input:checked + .slider:before { transform: translateX(18px); }
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.stat-item {
+    background: #F4ECF7;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.stat-item strong {
+    display: block;
+    color: #8E44AD;
+    font-size: 16px;
+}
+
+.stat-item small {
+    font-size: 10px;
+    color: var(--text-muted);
+}

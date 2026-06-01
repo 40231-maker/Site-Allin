@@ -1,19 +1,15 @@
 :root {
     --primary-yellow: #F1C40F;
     --dark-yellow: #D4AC0D;
-    --bg-light: #F8F9F9;
     --text-dark: #2C3E50;
     --text-muted: #7F8C8D;
-    --chat-bubble-user: #FCF3CF;
-    --chat-bubble-bot: #EBEDEF;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    -webkit-tap-highlight-color: transparent;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 body {
@@ -22,10 +18,9 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
 }
 
-/* CAIXA DO CELULAR (OBRIGATORIAMENTE RELATIVE) */
+/* CONTAINER DO CELULAR */
 .phone-container {
     width: 375px;
     height: 700px;
@@ -33,69 +28,108 @@ body {
     border-radius: 30px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     overflow: hidden;
-    position: relative !important; /* O !important garante que nada mude isso */
+    position: relative; /* Necessário para prender a barra no fundo */
     display: flex;
     flex-direction: column;
 }
 
-/* Botão de Voltar */
-.back-btn {
-    background: #000;
-    color: #fff;
-    border: none;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-}
-
-/* BARRA INFERIOR PRESA AO CELULAR */
+/* BARRA INFERIOR (PRESA AO CELULAR) */
 .nav-bar {
-    height: 70px;
+    height: 75px;
+    background: white;
     border-top: 1px solid #eee;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: white;
-    padding-bottom: 5px;
-    
-    /* Trava as dimensões dentro do phone-container */
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 999;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 .nav-item {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 11px;
-    font-weight: 500;
-    cursor: pointer;
     text-decoration: none;
-    width: 25%;
-    height: 100%;
-}
-
-a.nav-item {
-    color: var(--text-dark) !important;
+    color: var(--text-dark);
+    font-size: 11px;
+    font-weight: 600;
 }
 
 .nav-icon {
     width: 40px;
     height: 40px;
-    border-radius: 50%;
     background-color: var(--primary-yellow);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 3px;
-    font-size: 16px;
+    margin-bottom: 4px;
+    font-size: 18px;
+}
+/* css/global.css */
+
+/* ... (mantenha o :root, body e .phone-container como estão) ... */
+
+
+/* --- ESTILIZAÇÃO DOS FORMULÁRIOS E INPUTS --- */
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+    width: 100%;
+}
+
+.input-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    text-align: left;
+}
+
+/* Configuração unificada para caixas de texto, senha, telefone e seleção */
+.input-group input, 
+.input-group textarea,
+.input-group select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #D5DBDB;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: #FAFAFA;
+    color: var(--text-dark);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+/* Efeito luminoso amarelo ao clicar no campo */
+.input-group input:focus, 
+.input-group textarea:focus,
+.input-group select:focus {
+    border-color: var(--primary-yellow);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(241, 196, 15, 0.15);
+}
+
+/* Estilização rápida para os inputs simples da tela de login antiga */
+.login-input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    border: 1px solid #D5DBDB;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: #FAFAFA;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.login-input:focus {
+    border-color: var(--primary-yellow);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(241, 196, 15, 0.15);
 }

@@ -2,40 +2,174 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagens - App</title>
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/chat.css">
+    <style>
+        /* Estrutura do Chat */
+        .chat-header {
+            background-color: var(--primary-yellow);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 75px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .chat-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-dark);
+        }
+        .back-btn {
+            background: rgba(0, 0, 0, 0.05);
+            color: var(--text-dark);
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .brand-logo {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+        }
+        
+        /* Área das Mensagens com Rolagem */
+        .chat-body {
+            flex: 1;
+            padding: 15px;
+            background: #F8FAFC;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding-bottom: 90px; /* Evita que a última mensagem suma atrás da barra de digitação */
+        }
+
+        /* Balões de Mensagem */
+        .message {
+            max-width: 75%;
+            padding: 12px 16px;
+            border-radius: 16px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .msg-received {
+            background: #FFFFFF;
+            color: var(--text-dark);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .msg-sent {
+            background: var(--primary-yellow);
+            color: var(--text-dark);
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+            box-shadow: 0 2px 4px rgba(241,196,15,0.1);
+        }
+        .msg-time {
+            font-size: 10px;
+            color: var(--text-muted);
+            display: block;
+            text-align: right;
+            margin-top: 4px;
+        }
+
+        /* Caixa de Entrada de Texto (Fixa acima da Nav-bar) */
+        .chat-footer {
+            position: absolute;
+            bottom: 75px; /* Fica exatamente em cima da nav-bar global */
+            left: 0;
+            width: 100%;
+            background: #FFFFFF;
+            padding: 10px 15px;
+            border-top: 1px solid #E2E8F0;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            z-index: 90;
+        }
+        .chat-input {
+            flex: 1;
+            background: #F1F5F9;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            outline: none;
+        }
+        .send-btn {
+            background: var(--primary-yellow);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            color: var(--text-dark);
+            transition: transform 0.1s;
+        }
+        .send-btn:active {
+            transform: scale(0.9);
+        }
+    </style>
 </head>
 <body>
     <div class="phone-container">
+        
         <div class="chat-header">
-            <a href="listagem.html" class="back-btn" style="text-decoration: none;">←</a>
-            <div class="chat-user-info">
-                <div class="chat-avatar">👨</div>
-                <strong id="chat-header-name">Prestador</strong>
+            <div class="chat-info">
+                <a href="home.html" class="back-btn">←</a>
+                <div style="width: 36px; height: 36px; background: #CBD5E1; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px;">👤</div>
+                <div>
+                    <h3 style="font-size: 14px; color: var(--text-dark); margin: 0;">João Silva</h3>
+                    <span style="font-size: 11px; color: #27AE60; font-weight: 600;">• Online</span>
+                </div>
             </div>
-            <div class="chat-actions">
-                <span>📞</span>
-                <span>⋮</span>
+            <img src="./img/1000067940-removebg-preview.png" class="brand-logo" alt="Logo">
+        </div>
+
+        <div class="chat-body">
+            <div class="message msg-received">
+                Olá! Vi seu pedido de serviço para encanamento. Qual seria o problema principal?
+                <span class="msg-time">14:32</span>
+            </div>
+            
+            <div class="message msg-sent">
+                Oi João! É uma infiltração na parede do banheiro que começou ontem à noite.
+                <span class="msg-time">14:35</span>
+            </div>
+
+            <div class="message msg-received">
+                Perfeito. Consigo dar uma olhada e fazer a manutenção hoje no final da tarde. Fica bom para você?
+                <span class="msg-time">14:36</span>
             </div>
         </div>
-        
-        <div class="chat-messages">
-            <div class="message incoming">Olá! Como posso te ajudar com o seu problema hoje?</div>
-            <div class="message outgoing">Preciso de um orçamento para o conserto.</div>
-            <div class="message incoming">Perfeito, pode me enviar uma foto do ocorrido?</div>
+
+        <div class="chat-footer">
+            <input type="text" class="chat-input" placeholder="Digite uma mensagem...">
+            <button class="send-btn">➤</button>
         </div>
-        
-        <div class="chat-input-area">
-            <div class="chat-input-box"></div>
-            <span class="chat-icon">🎙️</span>
-            <span class="chat-icon">📷</span>
-        </div>
+
+        <nav class="nav-bar">
+            <a href="perfil.html" class="nav-item"><div class="nav-icon">👤</div>Perfil</a>
+            <a href="chat.html" class="nav-item" style="opacity: 0.5;"><div class="nav-icon">💬</div>Mensagens</a>
+            <a href="pagamento.html" class="nav-item"><div class="nav-icon">R$</div>Pagamento</a>
+            <a href="#" class="nav-item"><div class="nav-icon">•••</div>Configurações</a>
+        </nav>
+
     </div>
-    <script>
-        // Recupera o nome selecionado na listagem, se houver
-        const nomeSelecionado = localStorage.getItem('selectedProvider') || "Nanca Glorei";
-        document.getElementById('chat-header-name').innerText = nomeSelecionado;
-    </script>
 </body>
 </html>
