@@ -1,0 +1,135 @@
+:root {
+    --primary-yellow: #F1C40F;
+    --dark-yellow: #D4AC0D;
+    --text-dark: #2C3E50;
+    --text-muted: #7F8C8D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #E5E7E9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* CONTAINER DO CELULAR */
+.phone-container {
+    width: 375px;
+    height: 700px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    overflow: hidden;
+    position: relative; /* Necessário para prender a barra no fundo */
+    display: flex;
+    flex-direction: column;
+}
+
+/* BARRA INFERIOR (PRESA AO CELULAR) */
+.nav-bar {
+    height: 75px;
+    background: white;
+    border-top: 1px solid #eee;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.nav-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+    font-size: 18px;
+}
+/* css/global.css */
+
+/* ... (mantenha o :root, body e .phone-container como estão) ... */
+
+
+/* --- ESTILIZAÇÃO DOS FORMULÁRIOS E INPUTS --- */
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+    width: 100%;
+}
+
+.input-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    text-align: left;
+}
+
+/* Configuração unificada para caixas de texto, senha, telefone e seleção */
+.input-group input, 
+.input-group textarea,
+.input-group select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #D5DBDB;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: #FAFAFA;
+    color: var(--text-dark);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+/* Efeito luminoso amarelo ao clicar no campo */
+.input-group input:focus, 
+.input-group textarea:focus,
+.input-group select:focus {
+    border-color: var(--primary-yellow);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(241, 196, 15, 0.15);
+}
+
+/* Estilização rápida para os inputs simples da tela de login antiga */
+.login-input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    border: 1px solid #D5DBDB;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: #FAFAFA;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.login-input:focus {
+    border-color: var(--primary-yellow);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(241, 196, 15, 0.15);
+}
